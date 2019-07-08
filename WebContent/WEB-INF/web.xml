@@ -10,9 +10,20 @@
 		<servlet-class>lab.servlet.welcome.Welcome</servlet-class>
 	</servlet>
 
+	<servlet>
+		<servlet-name>SignUp</servlet-name>
+		<servlet-class>lab.servlet.welcome.SignUp</servlet-class>
+	</servlet>
+	
+
 	<servlet-mapping>
 		<servlet-name>Welcome</servlet-name>
 		<url-pattern>/welcome</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>SignUp</servlet-name>
+		<url-pattern>/SignUp</url-pattern>
 	</servlet-mapping>
 
 	<welcome-file-list>
