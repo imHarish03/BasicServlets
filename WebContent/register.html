@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+<title>User Registration Form</title>
+</head>
+<body bgcolor="pink">
+
+	<center>
+		<h1>Registration Form</h1>
+	</center>
+	<br>
+
+	<form method="post" action="SignUpServlet">
+
+		<table>
+			<tr>
+				<td>Name:</td>
+				<td><input type="text" name="uname"></td>
+			</tr>
+			<td>Create Password:</td>
+			<td><input type="password" name="upass"></td>
+			<tr>
+				<td>Confirm Password:</td>
+
+				<td><input type="password" name="upass"></td>
+
+			</tr>
+
+			<tr>
+
+				<td>Email-Id:</td>
+
+				<td><input type="text" name="uemailId"></td>
+
+			</tr>
+
+			<tr>
+
+				<td>Country:</td>
+
+				<td><select name="ucountry">
+
+						<option>India</option>
+
+						<option>Pakistan</option>
+
+						<option>Bangladesh</option>
+
+						<option>japan</option>
+
+						<option>Canada</option>
+
+				</select></td>
+
+			</tr>
+
+			<tr>
+
+				<td><input type="submit" value="Login"></td>
+
+				<td><input type="reset" value="reset"></td>
+
+			</tr>
+
+		</table>
+
+	</form>
+
+</body>
+
+</html>
