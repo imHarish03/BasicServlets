@@ -14,7 +14,7 @@
 		<servlet-name>SignUp</servlet-name>
 		<servlet-class>lab.servlet.welcome.SignUp</servlet-class>
 	</servlet>
-	
+
 
 	<servlet-mapping>
 		<servlet-name>Welcome</servlet-name>
@@ -25,6 +25,11 @@
 		<servlet-name>SignUp</servlet-name>
 		<url-pattern>/SignUp</url-pattern>
 	</servlet-mapping>
+
+	<error-page>
+		<exception-type>java.lang.Exception</exception-type>
+		<location>/error.jsp</location>
+	</error-page>
 
 	<welcome-file-list>
 		<welcome-file>index.html</welcome-file>

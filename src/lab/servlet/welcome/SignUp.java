@@ -66,10 +66,7 @@ public class SignUp implements Servlet {
 			st.close();
 			con.close();
 
-			// Get a writer pointer
-			// to display the succesful result
-			PrintWriter out = response.getWriter();
-			out.println("<html><body><b>Successfully Inserted" + "</b></body></html>");
+			request.getRequestDispatcher("/WEB-INF/view/login.jsp").forward(request, response);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
