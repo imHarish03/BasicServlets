@@ -11,7 +11,7 @@ public class DatabaseConnection {
 		// Database Connection
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
-			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/servlets", "root", "root");
+			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/servle", "root", "root");
 			return con;
 		} catch (Exception e) {
 			System.out.println("Exception : " + e);

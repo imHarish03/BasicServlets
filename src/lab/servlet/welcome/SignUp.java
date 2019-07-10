@@ -69,6 +69,7 @@ public class SignUp implements Servlet {
 			request.getRequestDispatcher("/WEB-INF/view/login.jsp").forward(request, response);
 		} catch (Exception e) {
 			e.printStackTrace();
+			throw new ServletException("No Database Connection");
 		}
 
 	}
