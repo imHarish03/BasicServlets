@@ -13,9 +13,8 @@ public class DatabaseConnection {
 			Class.forName("com.mysql.jdbc.Driver");
 			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/servle", "root", "root");
 			return con;
-		} catch (Exception e) {
-			System.out.println("Exception : " + e);
+		} catch (SQLException e) {
+			throw new SQLException("Error in the Database Connectivity");
 		}
-		return null;
 	}
 }
