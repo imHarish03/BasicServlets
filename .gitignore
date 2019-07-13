@@ -19,5 +19,5 @@ gradle/
 gradlew
 mvnw
 docker-composer.yml
-build/*
+build/
 

@@ -5,27 +5,34 @@
 <title>Sign up Servlet</title>
 </head>
 <body>
-    <center>
+	<center>
 		<h1>Registration Form</h1>
 	</center>
-<form action ="SignUp" method="POST">
- <fieldset>
-    <legend>Personal information:</legend>
-    First Name : <input type="text" name="firstName"><br>
-	Last Name  : <input type="text" name="lastName"><br>
-	Gender     : <input type="radio" name="gender" value="male"> Male <br>
-				 <input type="radio" name="gender" value="female"> Female <br>
-				 <input type="radio" name="gender" value="others"> Others
-	
-	<br>
-	<input type="submit" value="Submit"> Click me
+	<form action="SignUp" method="POST">
+		<fieldset>
+			<legend>Personal information:</legend>
+			<div>
+				First Name : <input type="text" name="firstName"><br>
+			</div>
+			<div>
+				Last Name : <input type="text" name="lastName"><br>
+			</div>
+			<div>
+				Gender : <input type="radio" name="gender" value="male">
+				Male <br> <input type="radio" name="gender" value="female">
+				Female <br> <input type="radio" name="gender" value="others">
+				Others <br>
+			</div>
+			<div>
+				Password : <input type="text" name="password">
+			</div>
+			<input type="submit" value="Submit">
+		</fieldset>
 
-  </fieldset>
-  
-</form>
+	</form>
 	<footer>
-	<a href="index.html">Back To Login</a>
+		<a href="index.html">Back To Login</a>
 	</footer>
-	
+
 </body>
 </html>
