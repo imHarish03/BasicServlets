@@ -2,34 +2,61 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Sign up Servlet</title>
+<title>Welcome to Student Registration</title>
+<style type="text/css">
+div.registerBlock {
+	color: #ffffff;
+	width: 600px;
+	background-color: #146a93;
+	margin: 0 auto;
+	padding: 20px;
+	border-radius: 5px;
+}
+
+div.registerFields {
+	
+}
+</style>
 </head>
 <body>
-	<center>
-		<h1>Registration Form</h1>
-	</center>
-	<form action="SignUp" method="POST">
-		<fieldset>
-			<legend>Personal information:</legend>
-			<div>
-				First Name : <input type="text" name="firstName"><br>
-			</div>
-			<div>
-				Last Name : <input type="text" name="lastName"><br>
-			</div>
-			<div>
-				Gender : <input type="radio" name="gender" value="male">
-				Male <br> <input type="radio" name="gender" value="female">
-				Female <br> <input type="radio" name="gender" value="others">
-				Others <br>
-			</div>
-			<div>
-				Password : <input type="text" name="password">
-			</div>
-			<input type="submit" value="Submit">
-		</fieldset>
 
-	</form>
+	<h1>Registration Form</h1>
+	<div class="registerBlock">
+		<form action="SignUp" method="POST">
+			<fieldset>
+				<legend>Personal information:</legend>
+				<div class="registerFields">
+					<label for="firstName"> First Name :</label> <input type="text"
+						name="firstName">
+				</div>
+				<div class="registerFields">
+					<label for="lastName"> Last Name :</label> <input type="text"
+						name="lastName">
+				</div>
+				<div class="registerFields">
+					<label for="userName"> EmaiID :</label> <input type="text"
+						name="userName">
+				</div>
+
+				<div class="registerFields">
+					<label for="male">Male</label> <input type="radio" name="gender"
+						id="male" value="male"><br> <label for="female">Female</label>
+					<input type="radio" name="gender" id="female" value="female"><br>
+					<label for="other">Other</label> <input type="radio" name="gender"
+						id="other" value="other">
+				</div>
+
+				<div class="registerFields">
+					<label for="pass">Password (8 characters minimum):</label> <input
+						type="password" id="pass" name="password" minlength="8" required>
+				</div>
+				<div>
+					<input type="submit" value="Create Account">
+				</div>
+			</fieldset>
+
+		</form>
+	</div>
 	<footer>
 		<a href="index.html">Back To Login</a>
 	</footer>

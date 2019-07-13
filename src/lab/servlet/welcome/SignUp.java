@@ -48,7 +48,8 @@ public class SignUp implements Servlet {
 
 			// Create a SQL query to insert data into demo table
 			// demo table consists of two columns, so two '?' is used
-			PreparedStatement st = con.prepareStatement("insert into student(FirstName,LastName) values(?, ?)");
+			PreparedStatement st = con
+					.prepareStatement("insert into student(FirstName,LastName,Password,UserName) values(?,?,?,?)");
 
 			// For the first parameter,
 			// get the data using request object
@@ -57,7 +58,8 @@ public class SignUp implements Servlet {
 
 			// Same for second parameter
 			st.setString(2, request.getParameter("lastName"));
-
+			st.setString(3, request.getParameter("password"));
+			st.setString(4, request.getParameter("userName"));
 			// Execute the insert command using executeUpdate()
 			// to make changes in database
 			st.executeUpdate();

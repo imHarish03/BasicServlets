@@ -3,10 +3,41 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Hello Servlet</title>
+<style type="text/css">
+div.loginData {
+	color: #ffffff;
+	width: 600px;
+	background-color: #146a93;
+	margin: 0 auto;
+	padding: 20px;
+	border-radius: 5px;
+}
+
+div.loginButton {
+	margin: 0 auto;
+	margin-left: 30px;
+	border-color:
+}
+</style>
 </head>
 <body>
-	<h1>Welcome to servlet</h1>
-	 <a href="customRegister.html">Sign Up</a>
-	
+	<h1>Login Page</h1>
+	<div class=loginData>
+		<form action="Login" method="POST"></form>
+		<div class="registerFields">
+			<label for="userName"> User Name :</label> <input type="text"
+				name="userName">
+		</div>
+		<div class="registerFields">
+			<label for="password">Password :</label> <input type="password"
+				name="password">
+		</div>
+		<div class="loginButton">
+			<input type="submit" value="Login">
+		</div>
+
+	</div>
+
+	<a href="customRegister.html">Sign Up</a>
 </body>
 </html>
