@@ -68,7 +68,7 @@ public class SignUp implements Servlet {
 			st.close();
 			con.close();
 
-			request.getRequestDispatcher("/WEB-INF/view/login.jsp").forward(request, response);
+			request.getRequestDispatcher("/index.html").forward(request, response);
 		} catch (Exception e) {
 			e.printStackTrace();
 			throw new ServletException("Error in the Data creation");
