@@ -7,6 +7,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.Cookie;
@@ -54,6 +55,10 @@ public class Login extends HttpServlet {
 
 		try {
 			Connection con = DatabaseConnection.initializeDatabase();
+
+			ServletContext ctx = request.getServletContext();
+			con = (Connection) ctx.getAttribute("dbConnection");
+
 			PreparedStatement pstmt = con.prepareStatement("select * from student Where UserName=? And Password=?");
 			pstmt.setString(1, userName);
 			pstmt.setString(2, password);
@@ -72,7 +77,8 @@ public class Login extends HttpServlet {
 				Cookie message = new Cookie("message", "Welcome");
 				response.addCookie(message);
 
-				request.getRequestDispatcher("WEB-INF/view/login.jsp").forward(request, response);;
+				request.getRequestDispatcher("WEB-INF/view/login.jsp").forward(request, response);
+				;
 			}
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
