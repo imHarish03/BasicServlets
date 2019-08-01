@@ -10,6 +10,10 @@ import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import lab.servlet.Constants.Constants;
 
 public class ValidateCookieFilter implements Filter {
 
@@ -24,19 +28,27 @@ public class ValidateCookieFilter implements Filter {
 			throws IOException, ServletException {
 		System.out.println("***************Filter Invoked**********************");
 		HttpServletRequest servletReq = (HttpServletRequest) request;
-		Cookie ck[] = servletReq.getCookies();
-		System.out.println("Cookies length : " + ck.length);
-		for (int i = 0; i < ck.length; i++) {
-			System.out.println("<br>" + ck[i].getName() + " " + ck[i].getValue());// printing name and value of cookie
-		}
+		HttpServletResponse servletRes = (HttpServletResponse) response;
 
+		if (!servletReq.getRequestURI().equals(Constants.LOGIN_URI)) {
+
+			Cookie ck[] = servletReq.getCookies();
+			for (int i = 0; i < ck.length; i++) {
+				if (ck[i].getName().equals("Authorization")) {
+
+				}
+
+			}
+			/*
+			 * if (session == null) { servletRes.sendRedirect("index.html"); }
+			 */
+		}
 		chain.doFilter(request, response);
 	}
 
 	@Override
 	public void init(FilterConfig filterConfig) throws ServletException {
 		// TODO Auto-generated method stub
-
 	}
 
 }

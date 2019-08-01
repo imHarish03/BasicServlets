@@ -6,7 +6,7 @@ import javax.servlet.ServletContext;
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 
-public class MyListener implements ServletContextListener {
+public class ContextListener implements ServletContextListener {
 
 	@Override
 	public void contextDestroyed(ServletContextEvent event) {

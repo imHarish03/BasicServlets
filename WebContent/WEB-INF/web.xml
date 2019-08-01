@@ -53,7 +53,7 @@
 	
 	 <listener>
         <listener-class>
-                 lab.servlet.event.MyListener
+                 lab.servlet.event.ContextListener
         </listener-class>
     </listener>
     

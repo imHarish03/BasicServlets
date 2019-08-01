@@ -74,11 +74,10 @@ public class Login extends HttpServlet {
 				// setting session to expiry in 5 mins
 				newSession.setMaxInactiveInterval(5 * 60);
 
-				Cookie message = new Cookie("message", "Welcome");
+				Cookie message = new Cookie("Authorized", newSession.getId());
 				response.addCookie(message);
 
 				request.getRequestDispatcher("WEB-INF/view/login.jsp").forward(request, response);
-				;
 			}
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
