@@ -7,7 +7,8 @@
 <title>Login Success Page</title>
 </head>
 <body>
-
+	<%=" Expression Tag : written to the output stream of the response"%>
+	<%="Below for Scriptlet tag : execute java source code in JSP"%>
 	<%
 		String message = null;
 		String sessionID = null;
