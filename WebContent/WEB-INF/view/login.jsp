@@ -7,10 +7,10 @@
 <title>Login Success Page</title>
 </head>
 <body>
-
 	<%
 		String message = null;
 		String sessionID = null;
+		String userName = request.getParameter("userName");
 		Cookie[] cookies = request.getCookies();
 		if (cookies != null) {
 			for (Cookie cookie : cookies) {
@@ -23,7 +23,10 @@
 	%>
 
 
-	<h3>Login Success</h3>
+	<h3>
+		Welcome
+		<%=userName%>>
+	</h3>
 	<h4><%=message%></h4>
 	<h4>
 		Session ID =
