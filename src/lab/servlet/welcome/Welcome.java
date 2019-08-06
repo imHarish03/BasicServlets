@@ -38,7 +38,6 @@ public class Welcome implements Servlet {
 
 	@Override
 	public void init(ServletConfig config) throws ServletException {
-
 		System.out.println("Init method");
 	}
 
