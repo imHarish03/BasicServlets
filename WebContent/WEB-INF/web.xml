@@ -63,11 +63,11 @@
     
     <filter>
     <filter-name>ValidateCookie</filter-name>
-    <filter-class>lab.servlet.Filter.ValidateCookieFilter</filter-class>
+    <filter-class>lab.servlet.Filter.AppFilter</filter-class>
      <init-param>
         <param-name>excludedUrls</param-name>
         <!-- Comma separated list of excluded servlets  -->
-        <param-value>/index.html,/customRegister.html</param-value>
+        <param-value>/index.html,/customRegister.html,/Login</param-value>
     </init-param>
     </filter>
     

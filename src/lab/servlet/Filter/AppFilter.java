@@ -1,6 +1,8 @@
 package lab.servlet.Filter;
 
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.ObjectInputStream;
 import java.util.Arrays;
 import java.util.List;
 
@@ -28,6 +30,7 @@ public class AppFilter implements Filter {
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
 			throws IOException, ServletException {
 		HttpServletRequest req = (HttpServletRequest) request;
+
 		String path = req.getServletPath();
 		// HttpServletResponse res = (HttpServletResponse) response;
 

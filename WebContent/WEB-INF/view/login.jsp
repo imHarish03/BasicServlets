@@ -7,6 +7,7 @@
 <title>Login Success Page</title>
 </head>
 <body>
+	<%@ page errorPage="error.jsp"%>
 	<%
 		String message = null;
 		String sessionID = null;
