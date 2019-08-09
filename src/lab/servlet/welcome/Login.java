@@ -6,6 +6,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.Date;
 
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
@@ -74,6 +75,11 @@ public class Login extends HttpServlet {
 				// setting session to expiry in 5 mins
 				newSession.setMaxInactiveInterval(5 * 60);
 
+				/// Add UserIDKey in the Login response
+				String userIDKey = new String("userID");
+				newSession.setAttribute(userIDKey, userName);
+
+				/// Add Cookies
 				Cookie message = new Cookie("Authorized", newSession.getId());
 				response.addCookie(message);
 
