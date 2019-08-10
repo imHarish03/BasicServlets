@@ -9,14 +9,11 @@
 <body>
 	<%@ page errorPage="error.jsp"%>
 	<%
-		String message = null;
 		String sessionID = null;
 		String userName = request.getParameter("userName");
 		Cookie[] cookies = request.getCookies();
 		if (cookies != null) {
 			for (Cookie cookie : cookies) {
-				if (cookie.getName().equals("message"))
-					message = cookie.getValue();
 				if (cookie.getName().equals("JSESSIONID"))
 					sessionID = cookie.getValue();
 			}
@@ -28,7 +25,6 @@
 		Welcome
 		<%=userName%>>
 	</h3>
-	<h4><%=message%></h4>
 	<h4>
 		Session ID =
 		<%=sessionID%></h4>

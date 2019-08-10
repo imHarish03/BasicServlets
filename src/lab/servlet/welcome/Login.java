@@ -53,6 +53,7 @@ public class Login extends HttpServlet {
 		String userName = request.getParameter("userName");
 		String password = request.getParameter("password");
 		int rows = 0;
+		int roleId = 0;
 
 		try {
 			Connection con = DatabaseConnection.initializeDatabase();
@@ -60,12 +61,13 @@ public class Login extends HttpServlet {
 			ServletContext ctx = request.getServletContext();
 			con = (Connection) ctx.getAttribute("dbConnection");
 
-			PreparedStatement pstmt = con.prepareStatement("select * from student Where UserName=? And Password=?");
+			PreparedStatement pstmt = con.prepareStatement("select RoleID from users Where UserName=? And Password=?");
 			pstmt.setString(1, userName);
 			pstmt.setString(2, password);
 
 			ResultSet rs = pstmt.executeQuery();
 			if (rs.next()) {
+				roleId = rs.getInt("RoleID");
 				rows++;
 			}
 
@@ -78,9 +80,10 @@ public class Login extends HttpServlet {
 				/// Add UserIDKey in the Login response
 				String userIDKey = new String("userID");
 				newSession.setAttribute(userIDKey, userName);
+				newSession.setAttribute("roleId", roleId);
 
 				/// Add Cookies
-				Cookie message = new Cookie("Authorized", newSession.getId());
+				Cookie message = new Cookie("JSESSIONID", newSession.getId());
 				response.addCookie(message);
 
 				request.getRequestDispatcher("WEB-INF/view/login.jsp").forward(request, response);
