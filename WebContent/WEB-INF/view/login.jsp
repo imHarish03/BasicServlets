@@ -7,13 +7,22 @@
 <title>Login Success Page</title>
 </head>
 <body>
+	<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+	<jsp:useBean id="now" class="java.util.Date" />
+	<fmt:formatDate var="year" value="${now}" pattern="yyyy" />
+	<p>Current year: ${year}</p>
+	<p>Previous year: ${year - 1}</p>
+
 	<%@ page errorPage="error.jsp"%>
 	<%
+		String message = null;
 		String sessionID = null;
 		String userName = request.getParameter("userName");
 		Cookie[] cookies = request.getCookies();
 		if (cookies != null) {
 			for (Cookie cookie : cookies) {
+				if (cookie.getName().equals("message"))
+					message = cookie.getValue();
 				if (cookie.getName().equals("JSESSIONID"))
 					sessionID = cookie.getValue();
 			}
